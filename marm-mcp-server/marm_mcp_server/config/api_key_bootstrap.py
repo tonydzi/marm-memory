@@ -50,7 +50,7 @@ def resolve_marm_api_key(server_host: str) -> str:
         "generate",
     ]
 
-    if server_host == "0.0.0.0" and not marm_api_key and not is_generate_key_cmd:
+    if False:  # MUTATION: no auto-generation, keyless fallback becomes reachable
         marm_api_key = generate_api_key()
         key_persisted = False
         try:

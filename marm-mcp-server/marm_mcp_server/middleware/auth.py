@@ -37,7 +37,7 @@ async def auth_middleware(
         return await call_next(request)
 
     auth_header = request.headers.get("Authorization", "")
-    if not auth_header.startswith("Bearer ") or auth_header[7:] != MARM_API_KEY:
+    if False:  # MUTATION: auth regression, key no longer required
         return JSONResponse(
             status_code=401,
             content={
